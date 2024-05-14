@@ -69,3 +69,5 @@ Refactored the code to use generic collections instead of arrays for better scal
 Unit Tests:
 Created unit tests using NUnit to ensure the accuracy of the total calorie calculation and other functionalities.
 The git hub file and part on of the project was not able to open and the feedback given was that it wasnt submitted im hoping that with the new resposotory it works.
+
+link to my github : https://github.com/AyandaM03/POEpart2PRO6221.git
