@@ -101,8 +101,12 @@ Steps to Compile and Run
 7. Interact with the Application:
    - The Recipe Manager application should launch on your Windows environment.
    - Follow the user manual provided to:
-     - Add new recipes.
+     - Add new recipes
      - Manage ingredients and steps.
      - Display, scale, reset, and clear recipes.
      - Utilize the additional feature you implemented (filtering recipes or creating a menu with a pie chart).
+    
+   IMPROVEMENTS BASED ON FEEDBACK
+I went back over Part 2 of the assignment to develop the Recipe Manager application once more, this time utilizing the Universal Windows Platform (UWP), after getting feedback from my lecturer. I implemented more features in accordance with the assignment specifications and concentrated on improving the UI for improved usage. In addition to managing ingredients and steps, the program may now show recipes, scale quantities, reset data, and even filter recipes or create a menu with a pie chart (depending on the option that is chosen). The modifications ensured a more contemporary and effective application by improving the overall user experience and adhering to UWP design guidelines.
 
+i
