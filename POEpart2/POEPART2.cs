@@ -1,7 +1,148 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace POEpart2
+namespace RecipeApplication
 {
+    // Class to store ingredient details
+    class Ingredient
+    {
+        public string Name { get; set; }
+        public string Unit { get; set; }
+        public double Quantity { get; set; }
+        public double Calories { get; set; }
+        public string FoodGroup { get; set; }
+
+        public Ingredient(string name, string unit, double quantity, double calories, string foodGroup)
+        {
+            Name = name;
+            Unit = unit;
+            Quantity = quantity;
+            Calories = calories;
+            FoodGroup = foodGroup;
+        }
+    }
+
+    // Class to store recipe details
+    class Recipe
+    {
+        public string Title { get; set; }
+        private List<Ingredient> ingredients;
+        private List<string> steps;
+
+        public delegate void CalorieAlertHandler(string message);
+        public event CalorieAlertHandler OnCalorieAlert;
+
+        public Recipe(string title)
+        {
+            Title = title;
+            ingredients = new List<Ingredient>();
+            steps = new List<string>();
+        }
+
+        // Method to add an ingredient
+        public void AddIngredient(string name, string unit, double quantity, double calories, string foodGroup)
+        {
+            ingredients.Add(new Ingredient(name, unit, quantity, calories, foodGroup));
+            if (GetTotalCalories() > 300)
+            {
+                OnCalorieAlert?.Invoke($"The recipe '{Title}' exceeds 300 calories.");
+            }
+        }
+
+        // Method to add a step
+        public void AddStep(string step)
+        {
+            steps.Add(step);
+        }
+
+        // Method to display the recipe
+        public void DisplayRecipe()
+        {
+            Console.WriteLine($"{Title}:");
+            foreach (var ingredient in ingredients)
+            {
+                Console.WriteLine($"{ingredient.Quantity} {ingredient.Unit} of {ingredient.Name} ({ingredient.Calories} calories, {ingredient.FoodGroup})");
+            }
+
+            Console.WriteLine("\nSteps:");
+            for (int i = 0; i < steps.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {steps[i]}");
+            }
+        }
+
+        // Method to display the scaled recipe
+        public void DisplayScaledRecipe(double factor)
+        {
+            Console.WriteLine($"{Title} (Scaled by {factor}):");
+            foreach (var ingredient in ingredients)
+            {
+                Console.WriteLine($"{ingredient.Quantity * factor} {ingredient.Unit} of {ingredient.Name} ({ingredient.Calories * factor} calories, {ingredient.FoodGroup})");
+            }
+
+            Console.WriteLine("\nSteps:");
+            for (int i = 0; i < steps.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {steps[i]}");
+            }
+        }
+
+        // Method to calculate total calories
+        public double GetTotalCalories()
+        {
+            return ingredients.Sum(i => i.Calories * i.Quantity);
+        }
+
+        // Method to scale the recipe
+        public void ScaleRecipe(double factor)
+        {
+            foreach (var ingredient in ingredients)
+            {
+                ingredient.Quantity *= factor;
+            }
+        }
+
+        // Method to clear the recipe data
+        public void ClearData()
+        {
+            ingredients.Clear();
+            steps.Clear();
+        }
+    }
+
+    // Class to manage multiple recipes
+    class RecipeBook
+    {
+        private List<Recipe> recipes;
+
+        public RecipeBook()
+        {
+            recipes = new List<Recipe>();
+        }
+
+        // Method to add a recipe
+        public void AddRecipe(Recipe recipe)
+        {
+            recipes.Add(recipe);
+        }
+
+        // Method to display all recipe titles
+        public void DisplayAllRecipes()
+        {
+            foreach (var recipe in recipes.OrderBy(r => r.Title))
+            {
+                Console.WriteLine(recipe.Title);
+            }
+        }
+
+        // Method to get a recipe by title
+        public Recipe GetRecipeByTitle(string title)
+        {
+            return recipes.FirstOrDefault(r => r.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -104,8 +245,11 @@ namespace POEpart2
                         if (selectedRecipe != null)
                         {
                             selectedRecipe.DisplayRecipe();
-                            Console.WriteLine("\nScaled Recipe (0.5):");
-                            selectedRecipe.DisplayScaledRecipe(0.5);
+                            if (selectedRecipe.Title == "Chakalaka")
+                            {
+                                Console.WriteLine("\nScaled Recipe (0.5):");
+                                selectedRecipe.DisplayScaledRecipe(0.5);
+                            }
                         }
                         else
                         {
