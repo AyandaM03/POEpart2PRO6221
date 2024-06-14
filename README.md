@@ -49,7 +49,7 @@ Compiling and Running the Software
    - Open `Test Explorer` from `Test > Test Explorer`.
    - Click `Run All` to execute the unit tests and verify the functionality.
 
-#### Example Commands in the Application
+ Example Commands in the Application
 
 1. Adding a Recipe:
    - Enter ingredients, steps, and scale a recipe by 0.5 to view both original and scaled versions.
@@ -71,7 +71,7 @@ Refactored the code to use generic collections instead of arrays for better scal
 
 
 PART 3 README
-Certainly! Here are the instructions for compiling and running the Recipe Manager software, now migrated to a Universal Windows Platform (UWP) application:
+
 
  How to Compile and Run the Recipe Manager (UWP) Software
 
