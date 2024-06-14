@@ -1,3 +1,4 @@
+
 # POEpart2
 Recipe Application
 
@@ -66,8 +67,42 @@ Calorie Management:
 Incorporated additional fields for ingredients such as calories and food group, and implemented calorie calculation with an alert when total calories exceed 300.
 Refactored Code:
 Refactored the code to use generic collections instead of arrays for better scalability and maintainability.
-Unit Tests:
-Created unit tests using NUnit to ensure the accuracy of the total calorie calculation and other functionalities.
-The git hub file and part on of the project was not able to open and the feedback given was that it wasnt submitted im hoping that with the new resposotory it works.
 
-link to my github : https://github.com/AyandaM03/POEpart2PRO6221.git
+
+
+PART 3 README
+Certainly! Here are the instructions for compiling and running the Recipe Manager software, now migrated to a Universal Windows Platform (UWP) application:
+
+ How to Compile and Run the Recipe Manager (UWP) Software
+
+Steps to Compile and Run
+
+1. Open Visual Studio:
+   - Launch Visual Studio.
+
+2. Open the Project:
+   - Navigate to `File` -> `Open` -> `Project/Solution...`.
+   - Select the `RecipeManager.sln` solution file from your cloned repository and open it.
+
+3. Restore NuGet Packages:
+   - If prompted, restore any NuGet packages that the project depends on. This ensures all necessary libraries are available.
+
+4. Set the Startup Project:
+   - In the Solution Explorer, right-click on the `RecipeManager (Universal Windows)` project.
+   - Select `Set as StartUp Project`.
+
+5. Configure Debugging Target:
+   - Ensure the target platform is set to `Local Machine` or an appropriate emulator if testing on a different device.
+
+6. Build and Run:
+   - Press `Ctrl + Shift + B` or navigate to `Build` -> `Build Solution` to build the project.
+   - Once built successfully, press `F5` or navigate to `Debug` -> `Start Debugging` to run the application.
+
+7. Interact with the Application:
+   - The Recipe Manager application should launch on your Windows environment.
+   - Follow the user manual provided to:
+     - Add new recipes.
+     - Manage ingredients and steps.
+     - Display, scale, reset, and clear recipes.
+     - Utilize the additional feature you implemented (filtering recipes or creating a menu with a pie chart).
+
