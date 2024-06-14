@@ -109,4 +109,4 @@ Steps to Compile and Run
    IMPROVEMENTS BASED ON FEEDBACK
 I went back over Part 2 of the assignment to develop the Recipe Manager application once more, this time utilizing the Universal Windows Platform (UWP), after getting feedback from my lecturer. I implemented more features in accordance with the assignment specifications and concentrated on improving the UI for improved usage. In addition to managing ingredients and steps, the program may now show recipes, scale quantities, reset data, and even filter recipes or create a menu with a pie chart (depending on the option that is chosen). The modifications ensured a more contemporary and effective application by improving the overall user experience and adhering to UWP design guidelines.
 
-i
+https://github.com/AyandaM03/POEpart2and3-FINALPOE-.git
