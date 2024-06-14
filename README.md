@@ -1,5 +1,5 @@
 
-# POEpart2
+# POEpart2 and 3 readmes
 Recipe Application
 
 This is a command-line application written in C# that allows users to create, display, and scale recipes.
